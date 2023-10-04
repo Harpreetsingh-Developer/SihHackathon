@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Place Search</title>
+</head>
+<body>
+    <h1>Tour Place Search</h1>
+    
+    <input type="text" id="searchInput" placeholder="Enter a place">
+    <button onclick="searchPlaces()">Search</button>
+    
+    <ul id="resultsList">
+        <!-- Search results will be displayed here -->
+    </ul>
+    
+    <script>
+        // Sample tour place data (you can replace this with your own data)
+        const tourPlaces = [
+        "Delhi",
+        "Lucknow",
+        "Kanpur",
+        "Agra",
+        "Goa",
+        "Mumbai",
+        "Kolkata",
+        "Chennai",
+        "Hyderabad",
+        "Bangalore",
+        "Jaipur",
+        "Pune",
+        "Ahmedabad",
+        "Surat",
+        "Udaipur",
+        "Varanasi",
+        "Amritsar",
+        "Kochi",
+        "Darjeeling",
+        "Mysore",
+        "Shimla",
+        "Ooty",
+        "Nainital",
+        "Mussoorie"
+        ];
+        
+        function searchPlaces() {
+            const searchInput = document.getElementById("searchInput").value.toLowerCase();
+            const resultsList = document.getElementById("resultsList");
+            resultsList.innerHTML = ""; // Clear previous results
+            
+            // Filter tour places that match the search input
+            const matchingPlaces = tourPlaces.filter(place => place.toLowerCase().includes(searchInput));
+            
+            // Display matching places in the results list
+            matchingPlaces.forEach(place => {
+                const listItem = document.createElement("li");
+                listItem.textContent = place;
+                resultsList.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+</html>
