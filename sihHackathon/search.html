@@ -95,34 +95,11 @@
     </div>
     <!-- Navbar & Hero End -->
 
-
-
+    <!-- Maps Search Result Start -->
 
     <div id="map"></div>
 
-    <!-- prettier-ignore -->
-    <script>(g => {
-            var h, a, k,
-                p = "The Google Maps JavaScript API",
-                c = "google", l = "importLibrary",
-                q = "__ib__",
-                m = document,
-                b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}),
-                r = new Set, e = new URLSearchParams,
-                u = () => h || (h = new Promise(async (f, n) => {
-                    await (a = m.createElement("script"));
-                    e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()),
-                        g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
-                    d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || "";
-                    m.head.append(a)
-                })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
-        })
-            ({ key: "AIzaSyDDvIMWBR2FHAn_bpu-0nZmGeNOOTNwgYo", v: "beta" });</script>
-
-
-
-
-
+    <!-- Maps Search Result Start -->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -196,10 +173,15 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js "></script>
-    <script src="js/maps.js"></script>
+    <!-- <script src="js/maps.js"></script> -->
+    <script src="js/search_maps.js"></script>
 
+    <!-- Maps JavaScript -->
     <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
             ({ key: "AIzaSyDDvIMWBR2FHAn_bpu-0nZmGeNOOTNwgYo", v: "beta" });</script>
+
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDvIMWBR2FHAn_bpu-0nZmGeNOOTNwgYo&libraries=places&callback=initMap">
+    </script>
 </body>
 
 </html>
